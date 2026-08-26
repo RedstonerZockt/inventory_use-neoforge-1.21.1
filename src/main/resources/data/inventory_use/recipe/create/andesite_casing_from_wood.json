@@ -1,0 +1,14 @@
+{
+  "type": "inventory_use:inventory_use",
+  "hand": {
+    "item": "create:andesite_alloy"
+  },
+  "inventory": {
+    "tag": "c:stripped_woods"
+  },
+  "result": {
+    "id": "create:andesite_casing"
+  },
+  "particle": "create:textures/item/andesite_alloy.png",
+  "sound": "minecraft:block.crafter.click"
+}

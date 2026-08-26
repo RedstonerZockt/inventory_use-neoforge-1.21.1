@@ -1,0 +1,17 @@
+{
+  "type": "inventory_use:inventory_use",
+  "hand": {
+    "tag": "minecraft:axes"
+  },
+  "inventory": {
+    "item": "minecraft:acacia_log"
+  },
+  "particle": "minecraft:textures/block/acacia_log.png",
+  "result": {
+    "count": 1,
+    "id": "minecraft:stripped_acacia_log"
+  },
+  "sound": {
+    "sound_id": "minecraft:item.axe.strip"
+  }
+}

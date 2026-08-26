@@ -1,0 +1,17 @@
+{
+  "type": "inventory_use:inventory_use",
+  "hand": {
+    "tag": "minecraft:hoes"
+  },
+  "inventory": {
+    "tag": "inventory_use:other_dirt"
+  },
+  "particle": "minecraft:textures/block/dirt.png",
+  "result": {
+    "count": 1,
+    "id": "minecraft:dirt"
+  },
+  "sound": {
+    "sound_id": "minecraft:item.hoe.till"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "inventory_use:inventory_use",
+  "hand": {
+    "tag": "minecraft:axes"
+  },
+  "inventory": {
+    "item": "minecraft:bamboo_block"
+  },
+  "particle": "minecraft:textures/block/bamboo_block.png",
+  "result": {
+    "count": 1,
+    "id": "minecraft:stripped_bamboo_block"
+  },
+  "sound": {
+    "sound_id": "minecraft:item.axe.strip"
+  }
+}

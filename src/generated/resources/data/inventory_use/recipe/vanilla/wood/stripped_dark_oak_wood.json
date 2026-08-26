@@ -1,0 +1,17 @@
+{
+  "type": "inventory_use:inventory_use",
+  "hand": {
+    "tag": "minecraft:axes"
+  },
+  "inventory": {
+    "item": "minecraft:dark_oak_wood"
+  },
+  "particle": "minecraft:textures/block/dark_oak_log.png",
+  "result": {
+    "count": 1,
+    "id": "minecraft:stripped_dark_oak_wood"
+  },
+  "sound": {
+    "sound_id": "minecraft:item.axe.strip"
+  }
+}

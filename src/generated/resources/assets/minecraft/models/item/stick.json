@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/handheld",
+  "overrides": [
+    {
+      "model": "inventory_use:item/icon",
+      "predicate": {
+        "minecraft:custom_model_data": 6905717.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "minecraft:item/stick"
+  }
+}

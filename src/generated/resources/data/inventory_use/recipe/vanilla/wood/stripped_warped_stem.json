@@ -1,0 +1,17 @@
+{
+  "type": "inventory_use:inventory_use",
+  "hand": {
+    "tag": "minecraft:axes"
+  },
+  "inventory": {
+    "item": "minecraft:warped_stem"
+  },
+  "particle": "minecraft:textures/block/warped_stem.png",
+  "result": {
+    "count": 1,
+    "id": "minecraft:stripped_warped_stem"
+  },
+  "sound": {
+    "sound_id": "minecraft:item.axe.strip"
+  }
+}

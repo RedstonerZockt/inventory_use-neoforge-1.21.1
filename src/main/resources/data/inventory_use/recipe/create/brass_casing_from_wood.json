@@ -1,0 +1,14 @@
+{
+  "type": "inventory_use:inventory_use",
+  "hand": {
+    "item": "create:brass_ingot"
+  },
+  "inventory": {
+    "tag": "c:stripped_woods"
+  },
+  "result": {
+    "id": "create:brass_casing"
+  },
+  "particle": "create:textures/item/brass_ingot.png",
+  "sound": "minecraft:block.crafter.click"
+}

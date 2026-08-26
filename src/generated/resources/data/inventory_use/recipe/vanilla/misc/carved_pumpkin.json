@@ -1,0 +1,17 @@
+{
+  "type": "inventory_use:inventory_use",
+  "hand": {
+    "item": "minecraft:shears"
+  },
+  "inventory": {
+    "item": "minecraft:pumpkin"
+  },
+  "particle": "minecraft:textures/block/pumpkin_side.png",
+  "result": {
+    "count": 1,
+    "id": "minecraft:carved_pumpkin"
+  },
+  "sound": {
+    "sound_id": "minecraft:block.pumpkin.carve"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "inventory_use:inventory_use",
+  "hand": {
+    "item": "minecraft:string"
+  },
+  "inventory": {
+    "item": "create:cardboard_block"
+  },
+  "result": {
+    "id": "create:bound_cardboard_block"
+  },
+  "particle": "minecraft:textures/item/string.png",
+  "sound": "minecraft:block.crafter.click"
+}

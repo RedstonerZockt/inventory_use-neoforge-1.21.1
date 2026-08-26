@@ -1,0 +1,17 @@
+{
+  "type": "inventory_use:inventory_use",
+  "hand": {
+    "tag": "minecraft:axes"
+  },
+  "inventory": {
+    "item": "minecraft:jungle_log"
+  },
+  "particle": "minecraft:textures/block/jungle_log.png",
+  "result": {
+    "count": 1,
+    "id": "minecraft:stripped_jungle_log"
+  },
+  "sound": {
+    "sound_id": "minecraft:item.axe.strip"
+  }
+}

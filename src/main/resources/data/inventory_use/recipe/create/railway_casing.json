@@ -1,0 +1,14 @@
+{
+  "type": "inventory_use:inventory_use",
+  "hand": {
+    "item": "create:sturdy_sheet"
+  },
+  "inventory": {
+    "item": "create:brass_casing"
+  },
+  "result": {
+    "id": "create:railway_casing"
+  },
+  "particle": "create:textures/item/sturdy_sheet.png",
+  "sound": "minecraft:block.crafter.click"
+}

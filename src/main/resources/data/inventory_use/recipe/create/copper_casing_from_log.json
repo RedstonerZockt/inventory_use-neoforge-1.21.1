@@ -1,0 +1,14 @@
+{
+  "type": "inventory_use:inventory_use",
+  "hand": {
+    "item": "minecraft:copper_ingot"
+  },
+  "inventory": {
+    "tag": "c:stripped_logs"
+  },
+  "result": {
+    "id": "create:copper_casing"
+  },
+  "particle": "minecraft:textures/item/copper_ingot.png",
+  "sound": "minecraft:block.crafter.click"
+}

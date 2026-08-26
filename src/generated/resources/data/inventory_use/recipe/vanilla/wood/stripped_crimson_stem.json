@@ -1,0 +1,17 @@
+{
+  "type": "inventory_use:inventory_use",
+  "hand": {
+    "tag": "minecraft:axes"
+  },
+  "inventory": {
+    "item": "minecraft:crimson_stem"
+  },
+  "particle": "minecraft:textures/block/crimson_stem.png",
+  "result": {
+    "count": 1,
+    "id": "minecraft:stripped_crimson_stem"
+  },
+  "sound": {
+    "sound_id": "minecraft:item.axe.strip"
+  }
+}

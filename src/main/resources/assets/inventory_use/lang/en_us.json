@@ -1,0 +1,27 @@
+{
+  "config.inventory_use.damage": "Damage",
+  "config.inventory_use.damage.tooltip": "Deal damage on use in inventory",
+
+  "config.inventory_use.damage_per_block": "Damage per Block",
+  "config.inventory_use.damage_per_block.tooltip": "Damage per block used on",
+
+
+
+  "inventory_use.configuration.general": "General",
+
+  "config.inventory_use.use_mouse_button": "Use Mouse Button",
+  "config.inventory_use.use_mouse_button.tooltip": "Mouse Button to use",
+
+  "inventory_use.configuration.graphics": "Graphics",
+
+  "config.inventory_use.show_particles": "Show particles",
+  "config.inventory_use.show_particles.tooltip": "Particle visibility",
+
+  "config.inventory_use.particle_count": "Particle count",
+  "config.inventory_use.particle_count.tooltip": "Count of the particles",
+
+  "inventory_use.configuration.sounds": "Sounds",
+
+  "config.inventory_use.use_sounds": "Use sounds",
+  "config.inventory_use.use_sounds.tooltip": "Volume of use sounds"
+}
