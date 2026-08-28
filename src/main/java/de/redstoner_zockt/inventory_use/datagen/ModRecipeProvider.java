@@ -244,5 +244,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/warped_stem.png"))
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_warped_hyphae"));
+
+        //======================
+        //copper
+        //======================
+
+        //InventoryUseRecipeBuilder.recipe()
+        //        .group(RecipeGroup.VANILLA).category(RecipeCategory.COPPER)
+        //        .ingredients(Ingredient.of(Items.WAXED_COPPER_BLOCK),Ingredient.of(ItemTags.AXES))
+        //        .output(new ItemStack(Items.COPPER_BLOCK))
+        //        .sound(SoundEvents.AXE_WAX_OFF)
+        //        .particle(ResourceLocation.withDefaultNamespace("textures/block/honeycomp_block.png"))
+        //        .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "copper_wax_off"));
     }
 }
