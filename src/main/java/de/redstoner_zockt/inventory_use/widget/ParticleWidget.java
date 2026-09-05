@@ -1,4 +1,4 @@
-package de.redstoner_zockt.inventory_use.screen.widget;
+package de.redstoner_zockt.inventory_use.widget;
 
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;

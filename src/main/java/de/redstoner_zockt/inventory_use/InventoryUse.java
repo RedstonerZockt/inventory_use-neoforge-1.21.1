@@ -1,12 +1,15 @@
 package de.redstoner_zockt.inventory_use;
 
+import de.redstoner_zockt.inventory_use.config.ClientConfig;
+import de.redstoner_zockt.inventory_use.config.ServerConfig;
 import de.redstoner_zockt.inventory_use.recipe.ModRecipes;
-import net.minecraft.world.inventory.ClickAction;
+import de.redstoner_zockt.inventory_use.widget.ParticleWidget;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.components.Renderable;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.config.ModConfig;
-import net.neoforged.neoforge.client.gui.ConfigurationScreen;
-import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
-import net.neoforged.neoforge.common.ModConfigSpec;
 import org.slf4j.Logger;
 import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.IEventBus;
@@ -25,7 +28,7 @@ public class InventoryUse {
     public InventoryUse(IEventBus modEventBus, ModContainer container) {
         LOGGER.info("Loading: {}", MOD_NAME);
         try {
-            container.registerConfig(ModConfig.Type.SERVER, InventoryUse.Config.SPEC, "inventory_use-server.toml");
+            container.registerConfig(ModConfig.Type.SERVER, ServerConfig.SPEC, "inventory_use-server.toml");
 
             NeoForge.EVENT_BUS.register(this);
             modEventBus.addListener(this::addCreative);
@@ -36,29 +39,37 @@ public class InventoryUse {
         LOGGER.info("Loaded: {}", MOD_NAME);
     }
 
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {}
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {}
+    public static void spawnParticles(Screen screen, ResourceLocation texture) {
+        ParticleWidget particleWidget;
 
-    public static class Config {
-        public static final ModConfigSpec SPEC;
+        double rawX = Minecraft.getInstance().mouseHandler.xpos();
+        double rawY = Minecraft.getInstance().mouseHandler.ypos();
 
-        public static final ModConfigSpec.IntValue DAMAGE_PER_BLOCK;
-        public static final ModConfigSpec.BooleanValue DAMAGE;
+        int mouseX = (int)(rawX * (double)Minecraft.getInstance().getWindow().getGuiScaledWidth() / (double)Minecraft.getInstance().getWindow().getWidth());
+        int mouseY = (int)(rawY * (double)Minecraft.getInstance().getWindow().getGuiScaledHeight() / (double)Minecraft.getInstance().getWindow().getHeight());
 
-        static {
-            ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
 
-            DAMAGE = builder
-                    .translation("config.inventory_use.damage")
-                    .define("damage",true);
+        int textureWidth = 16;
+        int textureHeight = 16;
+        int widgetWidth = textureWidth * 2;
+        int widgetHeight = textureHeight * 2;
+        int x = mouseX - textureWidth / 2;
+        int y = mouseY - textureHeight;
 
-            DAMAGE_PER_BLOCK = builder
-                    .translation("config.inventory_use.damage_per_block")
-                    .defineInRange("damage_per_block",1,1,10);
+        particleWidget = new ParticleWidget(x, y, widgetWidth, widgetHeight, textureWidth , textureHeight, texture, ClientConfig.PARTICLE_COUNT.get(),30);
 
-            SPEC = builder.build();
+        screen.renderables.add(particleWidget);
+    }
+
+    public static void particlesTick(Screen screen) {
+        for (Renderable renderable : screen.renderables) {
+            if (renderable instanceof ParticleWidget particleWidget) {
+                particleWidget.tickParticles(1.5f);
+            }
         }
     }
 
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {}
+    @SubscribeEvent
+    public void onServerStarting(ServerStartingEvent event) {}
 }

@@ -1,15 +1,13 @@
 package de.redstoner_zockt.inventory_use.event;
 
 import de.redstoner_zockt.inventory_use.InventoryUse;
-import de.redstoner_zockt.inventory_use.InventoryUseClient;
+import de.redstoner_zockt.inventory_use.config.ClientConfig;
 import de.redstoner_zockt.inventory_use.recipe.InventoryUseRecipe;
 import de.redstoner_zockt.inventory_use.recipe.InventoryUseRecipeInput;
 import de.redstoner_zockt.inventory_use.recipe.ModRecipes;
-import de.redstoner_zockt.inventory_use.screen.ParticleScreen;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -26,23 +24,20 @@ public class ClientModEvents {
     public static void onItemStacked(ItemStackedOnOtherEvent event) {
         Optional<RecipeHolder<InventoryUseRecipe>> recipe = getCurrentRecipe(event);
         if (recipe.isEmpty()) return;
-        if (event.getClickAction() != InventoryUseClient.Config.USE_MOUSE_BUTTON.get()) {
+        if (event.getClickAction() != ClientConfig.USE_MOUSE_BUTTON.get()) {
             return;
         }
         Minecraft.getInstance().getSoundManager().play(
                 SimpleSoundInstance.forUI(
                         recipe.get().value().sound().value(),
                         1.0F,
-                        0.022f * InventoryUseClient.Config.USE_SOUNDS.get()
+                        0.022f * ClientConfig.USE_SOUNDS.get()
                 )
         );
 
-        if (InventoryUseClient.Config.SHOW_PARTICLES.get()) {
-            if (Minecraft.getInstance().screen instanceof ParticleScreen screen) {
-                screen.inventoryUseSpawnParticles(
-                        recipe.get().value().particleTexture()
-                );
-            }
+        if (ClientConfig.SHOW_PARTICLES.get()) {
+            assert Minecraft.getInstance().screen != null;
+            InventoryUse.spawnParticles(Minecraft.getInstance().screen,recipe.get().value().particleTexture());
         }
     }
 
@@ -52,8 +47,8 @@ public class ClientModEvents {
 
     @SubscribeEvent
     public static void onClientTickPost(ClientTickEvent.Post event) {
-        if (Minecraft.getInstance().screen instanceof ParticleScreen screen) {
-            screen.$tick();
+        if (Minecraft.getInstance().screen instanceof Screen screen) {
+            InventoryUse.particlesTick(screen);
         }
     }
 }

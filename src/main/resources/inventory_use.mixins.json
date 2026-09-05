@@ -10,6 +10,6 @@
     "requireAnnotations": true
   },
   "client": [
-    "ScreenMixin"
+
   ]
 }
