@@ -133,9 +133,6 @@ public record InventoryUseRecipe(
     }
 
     public static class Builder implements RecipeBuilder {
-        RecipeGroup group;
-        RecipeCategory category;
-
         String group_string;
 
         Ingredient hand;
@@ -152,19 +149,6 @@ public record InventoryUseRecipe(
 
             this.sound = null;
             this.particle = null;
-
-            this.group = null;
-            this.category = null;
-        }
-
-        public Builder group(RecipeGroup group) {
-            this.group = group;
-            return this;
-        }
-
-        public Builder category(RecipeCategory category) {
-            this.category = category;
-            return this;
         }
 
         public static Builder recipe() {
@@ -209,13 +193,8 @@ public record InventoryUseRecipe(
 
         @Override
         public void save(RecipeOutput recipeOutput, ResourceLocation id) {
-            if (this.group == null) {
-                InventoryUseRecipe recipe = new InventoryUseRecipe(hand, inventory, output, particle, Holder.direct(sound));
-                recipeOutput.accept(id.withPrefix(this.group_string + "/" + this.category.id + "/"), recipe, null);
-            }else {
-                InventoryUseRecipe recipe = new InventoryUseRecipe(hand, inventory, output, particle, Holder.direct(sound));
-                recipeOutput.accept(id.withPrefix(this.group.id + "/" + this.category.id + "/"), recipe, null);
-            }
+            InventoryUseRecipe recipe = new InventoryUseRecipe(hand, inventory, output, particle, Holder.direct(sound));
+            recipeOutput.accept(id, recipe, null);
         }
     }
 }

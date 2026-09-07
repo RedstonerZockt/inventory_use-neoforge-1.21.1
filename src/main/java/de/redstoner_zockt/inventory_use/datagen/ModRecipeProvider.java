@@ -30,7 +30,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         //======================
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.DIRT)
                 .ingredients(Ingredient.of(ModTags.Items.DIRT),Ingredient.of(ItemTags.SHOVELS))
                 .output(new ItemStack(Items.DIRT_PATH))
                 .sound(SoundEvents.SHOVEL_FLATTEN)
@@ -38,7 +37,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "dirt_path_1"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.DIRT)
                 .ingredients(Ingredient.of(ModTags.Items.OTHER_DIRT),Ingredient.of(ItemTags.SHOVELS))
                 .output(new ItemStack(Items.DIRT_PATH))
                 .sound(SoundEvents.SHOVEL_FLATTEN)
@@ -46,7 +44,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "dirt_path_2"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.DIRT)
                 .ingredients(Ingredient.of(ModTags.Items.OTHER_DIRT),Ingredient.of(ItemTags.HOES))
                 .output(new ItemStack(Items.DIRT))
                 .sound(SoundEvents.HOE_TILL)
@@ -54,7 +51,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "dirt"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.DIRT)
                 .ingredients(Ingredient.of(ModTags.Items.DIRT),Ingredient.of(ItemTags.HOES))
                 .output(new ItemStack(Items.FARMLAND))
                 .sound(SoundEvents.HOE_TILL)
@@ -66,7 +62,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         //======================
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.MISC)
                 .ingredients(Ingredient.of(Items.PUMPKIN),Ingredient.of(Items.SHEARS))
                 .output(new ItemStack(Items.CARVED_PUMPKIN))
                 .sound(SoundEvents.PUMPKIN_CARVE)
@@ -78,7 +73,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         //======================
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.WOOD)
                 .ingredients(Ingredient.of(Items.ACACIA_LOG),Ingredient.of(ItemTags.AXES))
                 .output(new ItemStack(Items.STRIPPED_ACACIA_LOG))
                 .sound(SoundEvents.AXE_STRIP)
@@ -86,7 +80,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_acacia_log"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.WOOD)
                 .ingredients(Ingredient.of(Items.ACACIA_WOOD),Ingredient.of(ItemTags.AXES))
                 .output(new ItemStack(Items.STRIPPED_ACACIA_WOOD))
                 .sound(SoundEvents.AXE_STRIP)
@@ -94,7 +87,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_acacia_wood"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.WOOD)
                 .ingredients(Ingredient.of(Items.BAMBOO_BLOCK),Ingredient.of(ItemTags.AXES))
                 .output(new ItemStack(Items.STRIPPED_BAMBOO_BLOCK))
                 .sound(SoundEvents.AXE_STRIP)
@@ -102,7 +94,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_bamboo_block"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.WOOD)
                 .ingredients(Ingredient.of(Items.BIRCH_LOG),Ingredient.of(ItemTags.AXES))
                 .output(new ItemStack(Items.STRIPPED_BIRCH_LOG))
                 .sound(SoundEvents.AXE_STRIP)
@@ -110,7 +101,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_birch_log"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.WOOD)
                 .ingredients(Ingredient.of(Items.BIRCH_WOOD),Ingredient.of(ItemTags.AXES))
                 .output(new ItemStack(Items.STRIPPED_BIRCH_WOOD))
                 .sound(SoundEvents.AXE_STRIP)
@@ -118,7 +108,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_birch_wood"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.WOOD)
                 .ingredients(Ingredient.of(Items.CHERRY_LOG),Ingredient.of(ItemTags.AXES))
                 .output(new ItemStack(Items.STRIPPED_CHERRY_LOG))
                 .sound(SoundEvents.AXE_STRIP)
@@ -126,7 +115,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_cherry_log"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.WOOD)
                 .ingredients(Ingredient.of(Items.CHERRY_WOOD),Ingredient.of(ItemTags.AXES))
                 .output(new ItemStack(Items.STRIPPED_CHERRY_WOOD))
                 .sound(SoundEvents.AXE_STRIP)
@@ -134,7 +122,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_cherry_wood"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.WOOD)
                 .ingredients(Ingredient.of(Items.CRIMSON_STEM),Ingredient.of(ItemTags.AXES))
                 .output(new ItemStack(Items.STRIPPED_CRIMSON_STEM))
                 .sound(SoundEvents.AXE_STRIP)
@@ -142,7 +129,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_crimson_stem"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.WOOD)
                 .ingredients(Ingredient.of(Items.CRIMSON_HYPHAE),Ingredient.of(ItemTags.AXES))
                 .output(new ItemStack(Items.STRIPPED_CRIMSON_HYPHAE))
                 .sound(SoundEvents.AXE_STRIP)
@@ -150,7 +136,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_crimson_hyphae"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.WOOD)
                 .ingredients(Ingredient.of(Items.DARK_OAK_LOG),Ingredient.of(ItemTags.AXES))
                 .output(new ItemStack(Items.STRIPPED_DARK_OAK_LOG))
                 .sound(SoundEvents.AXE_STRIP)
@@ -158,7 +143,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_dark_oak_log"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.WOOD)
                 .ingredients(Ingredient.of(Items.DARK_OAK_WOOD),Ingredient.of(ItemTags.AXES))
                 .output(new ItemStack(Items.STRIPPED_DARK_OAK_WOOD))
                 .sound(SoundEvents.AXE_STRIP)
@@ -166,7 +150,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_dark_oak_wood"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.WOOD)
                 .ingredients(Ingredient.of(Items.JUNGLE_LOG),Ingredient.of(ItemTags.AXES))
                 .output(new ItemStack(Items.STRIPPED_JUNGLE_LOG))
                 .sound(SoundEvents.AXE_STRIP)
@@ -174,7 +157,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_jungle_log"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.WOOD)
                 .ingredients(Ingredient.of(Items.JUNGLE_WOOD),Ingredient.of(ItemTags.AXES))
                 .output(new ItemStack(Items.STRIPPED_JUNGLE_WOOD))
                 .sound(SoundEvents.AXE_STRIP)
@@ -182,7 +164,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_jungle_wood"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.WOOD)
                 .ingredients(Ingredient.of(Items.MANGROVE_LOG),Ingredient.of(ItemTags.AXES))
                 .output(new ItemStack(Items.STRIPPED_MANGROVE_LOG))
                 .sound(SoundEvents.AXE_STRIP)
@@ -190,7 +171,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_mangrove_log"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.WOOD)
                 .ingredients(Ingredient.of(Items.MANGROVE_WOOD),Ingredient.of(ItemTags.AXES))
                 .output(new ItemStack(Items.STRIPPED_MANGROVE_WOOD))
                 .sound(SoundEvents.AXE_STRIP)
@@ -198,7 +178,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_mangrove_wood"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.WOOD)
                 .ingredients(Ingredient.of(Items.OAK_LOG),Ingredient.of(ItemTags.AXES))
                 .output(new ItemStack(Items.STRIPPED_OAK_LOG))
                 .sound(SoundEvents.AXE_STRIP)
@@ -206,7 +185,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_oak_log"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.WOOD)
                 .ingredients(Ingredient.of(Items.OAK_WOOD),Ingredient.of(ItemTags.AXES))
                 .output(new ItemStack(Items.STRIPPED_OAK_WOOD))
                 .sound(SoundEvents.AXE_STRIP)
@@ -214,7 +192,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_oak_wood"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.WOOD)
                 .ingredients(Ingredient.of(Items.SPRUCE_LOG),Ingredient.of(ItemTags.AXES))
                 .output(new ItemStack(Items.STRIPPED_SPRUCE_LOG))
                 .sound(SoundEvents.AXE_STRIP)
@@ -222,7 +199,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_spruce_log"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.WOOD)
                 .ingredients(Ingredient.of(Items.SPRUCE_WOOD),Ingredient.of(ItemTags.AXES))
                 .output(new ItemStack(Items.STRIPPED_SPRUCE_WOOD))
                 .sound(SoundEvents.AXE_STRIP)
@@ -230,7 +206,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_spruce_wood"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.WOOD)
                 .ingredients(Ingredient.of(Items.WARPED_STEM),Ingredient.of(ItemTags.AXES))
                 .output(new ItemStack(Items.STRIPPED_WARPED_STEM))
                 .sound(SoundEvents.AXE_STRIP)
@@ -238,7 +213,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_warped_stem"));
 
         InventoryUseRecipe.Builder.recipe()
-                .group(RecipeGroup.VANILLA).category(RecipeCategory.WOOD)
                 .ingredients(Ingredient.of(Items.WARPED_HYPHAE),Ingredient.of(ItemTags.AXES))
                 .output(new ItemStack(Items.STRIPPED_WARPED_HYPHAE))
                 .sound(SoundEvents.AXE_STRIP)
