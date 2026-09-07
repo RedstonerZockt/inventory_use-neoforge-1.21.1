@@ -46,8 +46,8 @@ public class InventoryUseRecipeCategory
                     InventoryUseRecipe.class
             );
 
-    private static final int WIDTH = 165;
-    private static final int HEIGHT = 69;
+    private static final int WIDTH = 129;
+    private static final int HEIGHT = 56;
 
     private final IDrawable icon;
 
@@ -83,24 +83,24 @@ public class InventoryUseRecipeCategory
     ) {
         builder.addSlot(
                 RecipeIngredientRole.INPUT,
-                72,
-                6
-        ).addIngredients(
-                recipe.getIngredients().get(0)
-        );
-
-        builder.addSlot(
-                RecipeIngredientRole.INPUT,
-                34,
-                42
+                16,
+                20
         ).addIngredients(
                 recipe.getIngredients().get(1)
         );
 
         builder.addSlot(
+                RecipeIngredientRole.INPUT,
+                20,
+                24
+        ).addIngredients(
+                recipe.getIngredients().get(0)
+        );
+
+        builder.addSlot(
                 RecipeIngredientRole.OUTPUT,
-                119,
-                42
+                92,
+                20
         ).addItemStack(
                 recipe.getResultItem(null)
         );
@@ -137,18 +137,6 @@ public class InventoryUseRecipeCategory
                 WIDTH,
                 HEIGHT
         );
-        guiGraphics.blit(
-                ICON,
-                90,
-                6,
-                0,
-                0,
-                24,
-                24,
-                24,
-                24
-        );
-
         IRecipeCategory.super.draw(
                 recipe,
                 recipeSlotsView,
@@ -156,5 +144,6 @@ public class InventoryUseRecipeCategory
                 mouseX,
                 mouseY
         );
+
     }
 }
