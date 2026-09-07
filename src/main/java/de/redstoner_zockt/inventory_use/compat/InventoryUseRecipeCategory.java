@@ -92,7 +92,7 @@ public class InventoryUseRecipeCategory
         builder.addSlot(
                 RecipeIngredientRole.INPUT,
                 20,
-                24
+                26
         ).addIngredients(
                 recipe.getIngredients().get(0)
         );
