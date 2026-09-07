@@ -6,7 +6,7 @@ import net.minecraft.client.gui.components.Renderable;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.resources.ResourceLocation;
 
-public class ParticleManeger {
+public class ParticleManger {
     public static void spawnParticles(Screen screen, ResourceLocation texture) {
         ParticleWidget particleWidget;
 

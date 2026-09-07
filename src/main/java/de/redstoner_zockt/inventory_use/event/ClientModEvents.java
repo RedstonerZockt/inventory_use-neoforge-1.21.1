@@ -5,7 +5,7 @@ import de.redstoner_zockt.inventory_use.config.ClientConfig;
 import de.redstoner_zockt.inventory_use.recipe.InventoryUseRecipe;
 import de.redstoner_zockt.inventory_use.recipe.InventoryUseRecipeInput;
 import de.redstoner_zockt.inventory_use.recipe.ModRecipes;
-import de.redstoner_zockt.inventory_use.widget.ParticleManeger;
+import de.redstoner_zockt.inventory_use.widget.ParticleManger;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
@@ -38,7 +38,7 @@ public class ClientModEvents {
 
         if (ClientConfig.SHOW_PARTICLES.get()) {
             assert Minecraft.getInstance().screen != null;
-            ParticleManeger.spawnParticles(Minecraft.getInstance().screen,recipe.get().value().particleTexture());
+            ParticleManger.spawnParticles(Minecraft.getInstance().screen,recipe.get().value().particleTexture());
         }
     }
 
@@ -49,7 +49,7 @@ public class ClientModEvents {
     @SubscribeEvent
     public static void onClientTickPost(ClientTickEvent.Post event) {
         if (Minecraft.getInstance().screen instanceof Screen screen) {
-            ParticleManeger.particlesTick(screen);
+            ParticleManger.particlesTick(screen);
         }
     }
 }
