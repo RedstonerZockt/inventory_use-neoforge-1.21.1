@@ -2,8 +2,6 @@ package de.redstoner_zockt.inventory_use.datagen;
 
 import de.redstoner_zockt.inventory_use.InventoryUse;
 import de.redstoner_zockt.inventory_use.recipe.InventoryUseRecipe;
-import de.redstoner_zockt.inventory_use.recipe.RecipeCategory;
-import de.redstoner_zockt.inventory_use.recipe.RecipeGroup;
 import de.redstoner_zockt.inventory_use.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -224,7 +222,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         //======================
 
         //InventoryUseRecipeBuilder.recipe()
-        //        .group(RecipeGroup.VANILLA).category(RecipeCategory.COPPER)
         //        .ingredients(Ingredient.of(Items.WAXED_COPPER_BLOCK),Ingredient.of(ItemTags.AXES))
         //        .output(new ItemStack(Items.COPPER_BLOCK))
         //        .sound(SoundEvents.AXE_WAX_OFF)
