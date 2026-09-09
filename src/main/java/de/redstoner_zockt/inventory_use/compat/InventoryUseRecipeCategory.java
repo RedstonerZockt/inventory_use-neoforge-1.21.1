@@ -34,12 +34,6 @@ public class InventoryUseRecipeCategory
                     "textures/jei/back.png"
             );
 
-    public static final ResourceLocation ICON =
-            ResourceLocation.fromNamespaceAndPath(
-                    InventoryUse.MOD_ID,
-                    "textures/item/icon.png"
-            );
-
     public static final RecipeType<InventoryUseRecipe> INVENTORY_USE_RECIPE_RECIPE_TYPE =
             new RecipeType<>(
                     UID,
@@ -91,7 +85,7 @@ public class InventoryUseRecipeCategory
 
         builder.addSlot(
                 RecipeIngredientRole.INPUT,
-                20,
+                24,
                 26
         ).addIngredients(
                 recipe.getIngredients().get(0)
