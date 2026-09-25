@@ -1,10 +1,10 @@
 package de.redstoner_zockt.inventory_use.config;
 
-import net.minecraft.world.inventory.ClickAction;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
 public class ClientConfig {
     public static final ModConfigSpec SPEC;
+    public static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
     public static final ModConfigSpec.EnumValue<ClickAction> USE_MOUSE_BUTTON;
 
@@ -14,36 +14,34 @@ public class ClientConfig {
     public static final ModConfigSpec.IntValue USE_SOUNDS;
 
     static {
-        ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
+        BUILDER.comment("General").push("general");
 
-        builder.comment("General").push("general");
-
-        USE_MOUSE_BUTTON = builder
+        USE_MOUSE_BUTTON = BUILDER
                 .translation("config.inventory_use.use_mouse_button")
                 .defineEnum("use_mouse_button",ClickAction.SECONDARY);
 
-        builder.pop();
+        BUILDER.pop();
 
-        builder.comment("Graphics").push("graphics");
+        BUILDER.comment("Graphics").push("graphics");
 
-        SHOW_PARTICLES = builder
+        SHOW_PARTICLES = BUILDER
                 .translation("config.inventory_use.show_particles")
                 .define("show_particles",true);
 
-        PARTICLE_COUNT = builder
+        PARTICLE_COUNT = BUILDER
                 .translation("config.inventory_use.particle_count")
                 .defineInRange("particle_count",30,1,100);
 
-        builder.pop();
+        BUILDER.pop();
 
-        builder.comment("Sound").push("sounds");
+        BUILDER.comment("Sound").push("sounds");
 
-        USE_SOUNDS = builder
+        USE_SOUNDS = BUILDER
                 .translation("config.inventory_use.use_sounds")
                 .defineInRange("use_sounds",50,0,100);
 
-        builder.pop();
+        BUILDER.pop();
 
-        SPEC = builder.build();
+        SPEC = BUILDER.build();
     }
 }

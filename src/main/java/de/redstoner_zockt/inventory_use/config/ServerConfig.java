@@ -4,21 +4,20 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 
 public class ServerConfig {
     public static final ModConfigSpec SPEC;
+    public static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
     public static final ModConfigSpec.IntValue DAMAGE_PER_BLOCK;
     public static final ModConfigSpec.BooleanValue DAMAGE;
 
     static {
-        ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
-
-        DAMAGE = builder
+        DAMAGE = BUILDER
                 .translation("config.inventory_use.damage")
                 .define("damage",true);
 
-        DAMAGE_PER_BLOCK = builder
+        DAMAGE_PER_BLOCK = BUILDER
                 .translation("config.inventory_use.damage_per_block")
                 .defineInRange("damage_per_block",1,1,10);
 
-        SPEC = builder.build();
+        SPEC = BUILDER.build();
     }
 }

@@ -25,7 +25,7 @@ public class ClientModEvents {
     public static void onItemStacked(ItemStackedOnOtherEvent event) {
         Optional<RecipeHolder<InventoryUseRecipe>> recipe = getCurrentRecipe(event);
         if (recipe.isEmpty()) return;
-        if (event.getClickAction() != ClientConfig.USE_MOUSE_BUTTON.get()) {
+        if (!ClientConfig.USE_MOUSE_BUTTON.get().map.contains(event.getClickAction())) {
             return;
         }
         Minecraft.getInstance().getSoundManager().play(
