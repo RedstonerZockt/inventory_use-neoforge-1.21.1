@@ -221,6 +221,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         //copper
         //======================
 
+        //TODO : add copper Recipes
+
         //InventoryUseRecipeBuilder.recipe()
         //        .ingredients(Ingredient.of(Items.WAXED_COPPER_BLOCK),Ingredient.of(ItemTags.AXES))
         //        .output(new ItemStack(Items.COPPER_BLOCK))
