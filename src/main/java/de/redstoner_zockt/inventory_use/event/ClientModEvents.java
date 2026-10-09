@@ -10,6 +10,7 @@ import de.redstoner_zockt.inventory_use.widget.ParticleManger;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -29,21 +30,19 @@ public class ClientModEvents {
     @SubscribeEvent
     public static void onItemStacked(ItemStackedOnOtherEvent event) {
         Optional<RecipeHolder<InventoryUseRecipe>> recipe = getCurrentRecipe(event);
+
         if (recipe.isEmpty()) return;
-        if (!ClientConfig.USE_MOUSE_BUTTON.get().map.contains(event.getClickAction())) {
-            return;
-        }
-        Minecraft.getInstance().getSoundManager().play(
-                SimpleSoundInstance.forUI(
-                        recipe.get().value().sound().value(),
-                        1.0F,
-                        0.022f * ClientConfig.USE_SOUNDS.get()
-                )
-        );
+        if (!ClientConfig.USE_MOUSE_BUTTON.get().map.contains(event.getClickAction())) return;
+
+        SoundEvent sound = recipe.get().value().sound().value();
+
+        Minecraft.getInstance().getSoundManager().play(SimpleSoundInstance.forUI(sound, 1.0F, (2.2f / 100) * ClientConfig.USE_SOUNDS.get()));
 
         if (ClientConfig.SHOW_PARTICLES.get()) {
-            assert Minecraft.getInstance().screen != null;
-            ParticleManger.spawnParticles(Minecraft.getInstance().screen,recipe.get().value().particleTexture());
+            Screen screen = Minecraft.getInstance().screen;
+            if (screen != null) {
+                ParticleManger.spawnParticles(screen, recipe.get().value().particleTexture());
+            }
         }
     }
 
