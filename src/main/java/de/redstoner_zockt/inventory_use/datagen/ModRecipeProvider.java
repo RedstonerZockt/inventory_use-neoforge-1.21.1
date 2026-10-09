@@ -228,6 +228,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         //        .output(new ItemStack(Items.COPPER_BLOCK))
         //        .sound(SoundEvents.AXE_WAX_OFF)
         //        .particle(ResourceLocation.withDefaultNamespace("textures/block/honeycomp_block.png"))
-        //        .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "copper_wax_off"));
+        //        .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "copper_block_wax_off"));
     }
 }

@@ -100,8 +100,6 @@ public class InventoryUseRecipeCategory
         );
     }
 
-
-
     @Override
     public int getWidth() {
         return WIDTH;
