@@ -24,7 +24,7 @@ import net.neoforged.neoforge.network.PacketDistributor;
 
 import java.util.Optional;
 
-@EventBusSubscriber(modid = InventoryUse.MOD_ID,value = Dist.CLIENT)
+@EventBusSubscriber(modid = InventoryUse.MOD_ID, value = Dist.CLIENT)
 public class ClientModEvents {
 
     @SubscribeEvent
