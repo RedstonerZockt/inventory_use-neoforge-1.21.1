@@ -36,25 +36,15 @@ public class ModEvents {
         ItemStack result = recipe.get().value().outputItem();
         if (result == null) return;
         int amountToConvert = targetItem.getCount();
-        int damage = amountToConvert * ServerConfig.DAMAGE_PER_BLOCK.get();
-        if (!ServerConfig.DAMAGE.get()){
-            damage = 0;
-        }
+        int damage = ServerConfig.DAMAGE.get() ? amountToConvert * ServerConfig.DAMAGE_PER_BLOCK.get() : 0;
+
         if (carriedItem.isDamageableItem()) {
             int remainingDurability = carriedItem.getMaxDamage() - carriedItem.getDamageValue();
-            if (damage > remainingDurability) {
-                return;
-            }
-            carriedItem.hurtAndBreak(
-                    damage,
-                    player,
-                    event.getCarriedSlotAccess().get().getEquipmentSlot()
-            );
-        }
-        else {
-            if (damage > carriedItem.getCount()) {
-                return;
-            }
+            if (damage > remainingDurability) return;
+
+            carriedItem.hurtAndBreak(damage, player, event.getCarriedSlotAccess().get().getEquipmentSlot());
+        } else {
+            if (damage > carriedItem.getCount()) return;
             carriedItem.shrink(damage);
         }
         ItemStack newStack = result.copy();
