@@ -2,6 +2,7 @@ package de.redstoner_zockt.inventory_use.event;
 
 import de.redstoner_zockt.inventory_use.InventoryUse;
 import de.redstoner_zockt.inventory_use.config.ClientConfig;
+import de.redstoner_zockt.inventory_use.networking.packet.ClickButtonPacketC2S;
 import de.redstoner_zockt.inventory_use.recipe.InventoryUseRecipe;
 import de.redstoner_zockt.inventory_use.recipe.InventoryUseRecipeInput;
 import de.redstoner_zockt.inventory_use.recipe.ModRecipes;
@@ -13,8 +14,10 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.event.ItemStackedOnOtherEvent;
+import net.neoforged.neoforge.network.PacketDistributor;
 
 import java.util.Optional;
 
@@ -51,5 +54,10 @@ public class ClientModEvents {
         if (Minecraft.getInstance().screen instanceof Screen screen) {
             ParticleManger.particlesTick(screen);
         }
+    }
+
+    @SubscribeEvent
+    public static void onClientPlayerJoin(ClientPlayerNetworkEvent.LoggingIn event) {
+        PacketDistributor.sendToServer(new ClickButtonPacketC2S(ClientConfig.USE_MOUSE_BUTTON.get().name()));
     }
 }

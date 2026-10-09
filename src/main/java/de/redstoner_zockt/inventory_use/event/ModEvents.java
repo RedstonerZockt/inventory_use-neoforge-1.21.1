@@ -3,6 +3,8 @@ package de.redstoner_zockt.inventory_use.event;
 import de.redstoner_zockt.inventory_use.InventoryUse;
 import de.redstoner_zockt.inventory_use.config.ClientConfig;
 import de.redstoner_zockt.inventory_use.config.ServerConfig;
+import de.redstoner_zockt.inventory_use.networking.ClientPayloadHandler;
+import de.redstoner_zockt.inventory_use.networking.packet.ClickButtonPacketC2S;
 import de.redstoner_zockt.inventory_use.recipe.InventoryUseRecipe;
 import de.redstoner_zockt.inventory_use.recipe.InventoryUseRecipeInput;
 import de.redstoner_zockt.inventory_use.recipe.ModRecipes;
@@ -12,6 +14,9 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.ItemStackedOnOtherEvent;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
+import net.neoforged.neoforge.network.registration.PayloadRegistrar;
+
 import java.util.Optional;
 
 @EventBusSubscriber(
@@ -61,5 +66,12 @@ public class ModEvents {
 
     private static Optional<RecipeHolder<InventoryUseRecipe>> getCurrentRecipe(ItemStackedOnOtherEvent event) {
         return event.getPlayer().level().getRecipeManager().getRecipeFor(ModRecipes.INVENTORY_USE_TYPE.get(), new InventoryUseRecipeInput(event.getCarriedItem(), event.getStackedOnItem()), event.getPlayer().level());
+    }
+
+    @SubscribeEvent
+    public static void registerPayloads(RegisterPayloadHandlersEvent event) {
+        final PayloadRegistrar registrar = event.registrar("1");
+
+        registrar.playToServer(ClickButtonPacketC2S.TYPE, ClickButtonPacketC2S.STREAM_CODEC, ClientPayloadHandler::handleClickButtonPacket);
     }
 }
