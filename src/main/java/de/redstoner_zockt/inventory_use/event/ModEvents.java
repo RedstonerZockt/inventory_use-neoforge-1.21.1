@@ -1,9 +1,8 @@
 package de.redstoner_zockt.inventory_use.event;
 
 import de.redstoner_zockt.inventory_use.InventoryUse;
-import de.redstoner_zockt.inventory_use.config.ClientConfig;
+import de.redstoner_zockt.inventory_use.config.ClickButtons;
 import de.redstoner_zockt.inventory_use.config.ServerConfig;
-import de.redstoner_zockt.inventory_use.networking.ClientPayloadHandler;
 import de.redstoner_zockt.inventory_use.networking.packet.ClickButtonPacketC2S;
 import de.redstoner_zockt.inventory_use.recipe.InventoryUseRecipe;
 import de.redstoner_zockt.inventory_use.recipe.InventoryUseRecipeInput;
@@ -32,7 +31,7 @@ public class ModEvents {
 
         Optional<RecipeHolder<InventoryUseRecipe>> recipe = getCurrentRecipe(event);
         if (recipe.isEmpty()) return;
-        if (ServerConfig.Temp.CLICK_BUTTONS.get(player).isNot(event.getClickAction())) return;
+        if (ClickButtons.get(player).isNot(event.getClickAction())) return;
 
         ItemStack result = recipe.get().value().outputItem();
         if (result == null) return;
@@ -72,6 +71,6 @@ public class ModEvents {
     public static void registerPayloads(RegisterPayloadHandlersEvent event) {
         final PayloadRegistrar registrar = event.registrar("1");
 
-        registrar.playToServer(ClickButtonPacketC2S.TYPE, ClickButtonPacketC2S.STREAM_CODEC, ClientPayloadHandler::handleClickButtonPacket);
+        registrar.playToServer(ClickButtonPacketC2S.TYPE, ClickButtonPacketC2S.STREAM_CODEC, ClickButtons::put);
     }
 }
