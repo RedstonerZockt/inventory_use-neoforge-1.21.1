@@ -26,21 +26,21 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void onItemStacked(ItemStackedOnOtherEvent event) {
-        Optional<RecipeHolder<InventoryUseRecipe>> recipe = getCurrentRecipe(event);
-        if (recipe.isEmpty()) return;
-        if (!ClientConfig.USE_MOUSE_BUTTON.get().map.contains(event.getClickAction())) {
-            return;
-        }
+        Player player = event.getPlayer();
         ItemStack carriedItem = event.getCarriedItem();
         ItemStack targetItem = event.getStackedOnItem();
-        ItemStack resultTemplate = recipe.get().value().outputItem();
-        if (resultTemplate == null) return;
+
+        Optional<RecipeHolder<InventoryUseRecipe>> recipe = getCurrentRecipe(event);
+        if (recipe.isEmpty()) return;
+        if (ServerConfig.Temp.CLICK_BUTTONS.get(player).isNot(event.getClickAction())) return;
+
+        ItemStack result = recipe.get().value().outputItem();
+        if (result == null) return;
         int amountToConvert = targetItem.getCount();
         int damage = amountToConvert * ServerConfig.DAMAGE_PER_BLOCK.get();
         if (!ServerConfig.DAMAGE.get()){
             damage = 0;
         }
-        Player player = event.getPlayer();
         if (carriedItem.isDamageableItem()) {
             int remainingDurability = carriedItem.getMaxDamage() - carriedItem.getDamageValue();
             if (damage > remainingDurability) {
@@ -58,7 +58,7 @@ public class ModEvents {
             }
             carriedItem.shrink(damage);
         }
-        ItemStack newStack = resultTemplate.copy();
+        ItemStack newStack = result.copy();
         newStack.setCount(amountToConvert);
         event.getSlot().set(newStack);
         event.setCanceled(true);

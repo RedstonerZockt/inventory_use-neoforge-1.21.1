@@ -9,26 +9,6 @@ import java.util.Map;
 public class ServerConfig {
     public static class Temp {
         public static Map<Player, ClickAction> CLICK_BUTTONS = new HashMap<>();
-
-        public static void add(Player player, ClickAction clickAction) {
-            CLICK_BUTTONS.put(player, clickAction);
-        }
-
-        public static void remove(Player player) {
-            CLICK_BUTTONS.remove(player);
-        }
-
-        public static void remove(String playerName) {
-            Player player = null;
-            for (Player p : CLICK_BUTTONS.keySet()) {
-                if (p.getDisplayName().equals(playerName)) {
-                    player = p;
-                }
-            }
-            if (playerName != null) {
-                CLICK_BUTTONS.remove(player);
-            }
-        }
     }
 
     public static final ModConfigSpec SPEC;

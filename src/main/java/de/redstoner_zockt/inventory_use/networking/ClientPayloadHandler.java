@@ -9,6 +9,6 @@ import net.neoforged.neoforge.network.handling.IPayloadContext;
 //>< : our position
 public class ClientPayloadHandler {
     public static void handleClickButtonPacket(ClickButtonPacketC2S clickButtonPacketC2S, IPayloadContext iPayloadContext) {
-        ServerConfig.Temp.add(iPayloadContext.player(), ClickAction.valueOf(clickButtonPacketC2S.clickButton()));
+        ServerConfig.Temp.CLICK_BUTTONS.put(iPayloadContext.player(), ClickAction.valueOf(clickButtonPacketC2S.clickButton()));
     }
 }

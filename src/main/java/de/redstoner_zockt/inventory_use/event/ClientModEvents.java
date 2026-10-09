@@ -14,6 +14,8 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.event.config.ModConfigEvent;
 import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.event.ItemStackedOnOtherEvent;
@@ -59,5 +61,13 @@ public class ClientModEvents {
     @SubscribeEvent
     public static void onClientPlayerJoin(ClientPlayerNetworkEvent.LoggingIn event) {
         PacketDistributor.sendToServer(new ClickButtonPacketC2S(ClientConfig.USE_MOUSE_BUTTON.get().name()));
+    }
+
+    @SubscribeEvent
+    public static void onConfigSave(ModConfigEvent.Reloading event) {
+        ModConfig config = event.getConfig();
+        if (config.getModId().equals(InventoryUse.MOD_ID)) {
+            PacketDistributor.sendToServer(new ClickButtonPacketC2S(ClientConfig.USE_MOUSE_BUTTON.get().name()));
+        }
     }
 }

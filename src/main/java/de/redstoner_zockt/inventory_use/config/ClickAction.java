@@ -10,6 +10,14 @@ public enum ClickAction {
 
     public final List<net.minecraft.world.inventory.ClickAction> map;
 
+    public boolean is(net.minecraft.world.inventory.ClickAction clickAction) {
+        return map.contains(clickAction);
+    }
+
+    public boolean isNot(net.minecraft.world.inventory.ClickAction clickAction) {
+        return !is(clickAction);
+    }
+
     ClickAction(List<net.minecraft.world.inventory.ClickAction> map) {
         this.map = map;
     }
