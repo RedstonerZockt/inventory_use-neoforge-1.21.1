@@ -16,7 +16,7 @@ public class ModRecipes {
             DeferredRegister.create(Registries.RECIPE_TYPE, InventoryUse.MOD_ID);
 
     public static final DeferredHolder<RecipeSerializer<?>,RecipeSerializer<InventoryUseRecipe>> INVENTORY_USE_SERIALIZER =
-            SERIALIZERS.register("inventory_use",InventoryUseRecipe.Serializer::new);
+            SERIALIZERS.register("inventory_use", InventoryUseRecipe.Serializer::new);
 
     public static final DeferredHolder<RecipeType<?>,RecipeType<InventoryUseRecipe>> INVENTORY_USE_TYPE =
             TYPES.register("inventory_use",() -> new RecipeType<>() {
