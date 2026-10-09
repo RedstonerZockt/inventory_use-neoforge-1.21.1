@@ -8,17 +8,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ClickButtons {
-    public static Map<Player, ClickAction> CLICK_BUTTONS = new HashMap<>();
+    public static Map<Player, ClickButton> CLICK_BUTTONS = new HashMap<>();
 
     public static void put(ClickButtonPacketC2S clickButtonPacket, IPayloadContext payloadContext) {
-        CLICK_BUTTONS.put(payloadContext.player(), ClickAction.valueOf(clickButtonPacket.clickButton()));
+        CLICK_BUTTONS.put(payloadContext.player(), ClickButton.valueOf(clickButtonPacket.clickButton()));
     }
 
-    public static void put(Player player, ClickAction clickAction) {
-        CLICK_BUTTONS.put(player, clickAction);
+    public static void put(Player player, ClickButton clickButton) {
+        CLICK_BUTTONS.put(player, clickButton);
     }
 
-    public static ClickAction get(Player player) {
+    public static ClickButton get(Player player) {
         return CLICK_BUTTONS.get(player);
     }
 }

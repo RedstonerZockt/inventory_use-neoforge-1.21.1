@@ -6,7 +6,7 @@ public class ClientConfig {
     public static final ModConfigSpec SPEC;
     public static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
-    public static final ModConfigSpec.EnumValue<ClickAction> USE_MOUSE_BUTTON;
+    public static final ModConfigSpec.EnumValue<ClickButton> USE_MOUSE_BUTTON;
 
     public static final ModConfigSpec.BooleanValue SHOW_PARTICLES;
     public static final ModConfigSpec.IntValue PARTICLE_COUNT;
@@ -18,7 +18,7 @@ public class ClientConfig {
 
         USE_MOUSE_BUTTON = BUILDER
                 .translation("config.inventory_use.use_mouse_button")
-                .defineEnum("use_mouse_button",ClickAction.SECONDARY);
+                .defineEnum("use_mouse_button", ClickButton.SECONDARY);
 
         BUILDER.pop();
 
