@@ -12,6 +12,10 @@
   "config.inventory_use.use_mouse_button": "Maustaste",
   "config.inventory_use.use_mouse_button.tooltip": "Maustaste zum nutzen",
 
+  "config.inventory_use.use_mouse_button.primary": "primär",
+  "config.inventory_use.use_mouse_button.secondary": "sekundär",
+  "config.inventory_use.use_mouse_button.both": "beide",
+
 
 
   "inventory_use.configuration.graphics": "Grafik",
