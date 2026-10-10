@@ -34,11 +34,11 @@ public class ClientConfig {
 
         BUILDER.pop();
 
-        BUILDER.comment("Sound").push("sounds");
+        BUILDER.comment("Audio").push("audio");
 
         USE_SOUNDS = BUILDER
-                .translation("config.inventory_use.use_sounds")
-                .defineInRange("use_sounds",50,0,100);
+                .translation("config.inventory_use.use_sound")
+                .defineInRange("use_sound",50,0,100);
 
         BUILDER.pop();
 
