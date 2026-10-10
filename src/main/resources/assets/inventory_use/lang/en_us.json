@@ -3,7 +3,7 @@
   "config.inventory_use.damage.tooltip": "Deal damage on use in inventory",
 
   "config.inventory_use.damage_per_block": "Damage per Block",
-  "config.inventory_use.damage_per_block.tooltip": "Damage per block used on",
+  "config.inventory_use.damage_per_block.tooltip": "Damage per block where an item gets used on",
 
 
 
@@ -26,6 +26,6 @@
 
   "inventory_use.configuration.audio": "Audio",
 
-  "config.inventory_use.use_sound": "Use sounds",
+  "config.inventory_use.use_sound": "Use sound",
   "config.inventory_use.use_sound.tooltip": "Volume of the use sound"
 }
