@@ -214,12 +214,15 @@ public record InventoryUseRecipe(Ingredient handItem, Ingredient inventoryItem, 
         }
 
         @Override
-        public void save(RecipeOutput recipeOutput, ResourceLocation id) {
+        public void save(@NotNull RecipeOutput recipeOutput, @NotNull ResourceLocation id) {
             InventoryUseRecipe recipe = new InventoryUseRecipe(hand, inventory, output, particle, sound);
+            if(group_string != null) {
+                id = ResourceLocation.fromNamespaceAndPath(id.getNamespace(), group_string + "/" + id.getPath());
+            }
             recipeOutput.accept(id, recipe, null);
         }
 
-        public void save(RecipeOutput recipeOutput) {
+        public void save(@NotNull RecipeOutput recipeOutput) {
             this.save(recipeOutput, getDefaultRecipeId(this.getResult()));
         }
 
