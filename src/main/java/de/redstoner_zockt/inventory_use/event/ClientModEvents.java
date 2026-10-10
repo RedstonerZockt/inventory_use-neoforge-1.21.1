@@ -66,7 +66,9 @@ public class ClientModEvents {
     public static void onConfigSave(ModConfigEvent.Reloading event) {
         ModConfig config = event.getConfig();
         if (config.getModId().equals(InventoryUse.MOD_ID)) {
-            PacketDistributor.sendToServer(new ClickButtonPacketC2S(ClientConfig.USE_MOUSE_BUTTON.get().name()));
+            if (Minecraft.getInstance().getConnection() != null) {
+                PacketDistributor.sendToServer(new ClickButtonPacketC2S(ClientConfig.USE_MOUSE_BUTTON.get().name()));
+            }
         }
     }
 }
