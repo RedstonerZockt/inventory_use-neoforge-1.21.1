@@ -32,7 +32,7 @@ public class ClientModEvents {
         Optional<RecipeHolder<InventoryUseRecipe>> recipe = getCurrentRecipe(event);
 
         if (recipe.isEmpty()) return;
-        if (!ClientConfig.USE_MOUSE_BUTTON.get().map.contains(event.getClickAction())) return;
+        if (ClientConfig.USE_MOUSE_BUTTON.get().isNot(event.getClickAction())) return;
 
         SoundEvent sound = recipe.get().value().sound().value();
 

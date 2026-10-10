@@ -11,24 +11,28 @@ public enum ClickButton {
     BOTH(List.of(ClickAction.PRIMARY, ClickAction.SECONDARY), Component.translatable("config.inventory_use.use_mouse_button.both")),
     ;
 
-    public final List<ClickAction> map;
-    public final Component translation_key;
+    private final List<ClickAction> clickActions;
+    private final Component translation_key;
+
+    public Component getTranslationKey() {
+        return translation_key;
+    }
 
     public boolean is(ClickAction clickAction) {
-        return map.contains(clickAction);
+        return clickActions.contains(clickAction);
     }
 
     public boolean isNot(ClickAction clickAction) {
         return !is(clickAction);
     }
 
-    ClickButton(List<ClickAction> map, Component translationKey) {
-        this.map = map;
+    ClickButton(List<ClickAction> clickActions, Component translationKey) {
+        this.clickActions = clickActions;
         translation_key = translationKey;
     }
 
-    ClickButton(ClickAction element, Component translationKey) {
-        this.map = List.of(element);
+    ClickButton(ClickAction clickAction, Component translationKey) {
+        this.clickActions = List.of(clickAction);
         translation_key = translationKey;
     }
 }

@@ -17,13 +17,9 @@ public class InventoryUse {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public InventoryUse(IEventBus modEventBus, ModContainer container) {
-        try {
-            container.registerConfig(ModConfig.Type.SERVER, ServerConfig.SPEC, "inventory_use-server.toml");
+        container.registerConfig(ModConfig.Type.SERVER, ServerConfig.SPEC, "inventory_use-server.toml");
 
-            NeoForge.EVENT_BUS.register(this);
-            ModRecipes.register(modEventBus);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        NeoForge.EVENT_BUS.register(this);
+        ModRecipes.register(modEventBus);
     }
 }
