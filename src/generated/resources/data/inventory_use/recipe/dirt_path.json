@@ -4,7 +4,7 @@
     "tag": "minecraft:shovels"
   },
   "inventory": {
-    "tag": "inventory_use:other_dirt"
+    "tag": "inventory_use:all_dirt"
   },
   "particle": "minecraft:textures/block/dirt.png",
   "result": {

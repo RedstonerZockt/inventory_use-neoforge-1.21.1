@@ -5,8 +5,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
-public class ItemModelProvider extends net.neoforged.neoforge.client.model.generators.ItemModelProvider {
-    public ItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+public class VanilaItemModelProvider extends net.neoforged.neoforge.client.model.generators.ItemModelProvider {
+    public VanilaItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, "minecraft", existingFileHelper);
     }
 

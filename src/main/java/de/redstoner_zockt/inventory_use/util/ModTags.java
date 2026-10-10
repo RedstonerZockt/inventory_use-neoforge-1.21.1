@@ -10,6 +10,7 @@ public class ModTags {
     public static class Items {
         public static final TagKey<Item> DIRT = createTag("dirt");
         public static final TagKey<Item> OTHER_DIRT = createTag("other_dirt");
+        public static final TagKey<Item> ALL_DIRT = createTag("all_dirt");
 
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, name));

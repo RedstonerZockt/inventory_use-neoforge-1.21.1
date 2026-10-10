@@ -28,194 +28,212 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         //======================
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(ModTags.Items.DIRT),Ingredient.of(ItemTags.SHOVELS))
-                .output(new ItemStack(Items.DIRT_PATH))
+                .inventory(ModTags.Items.ALL_DIRT)
+                .hand(ItemTags.SHOVELS)
+                .output(Items.DIRT_PATH)
                 .sound(SoundEvents.SHOVEL_FLATTEN)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/dirt.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "dirt_path_1"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(ModTags.Items.OTHER_DIRT),Ingredient.of(ItemTags.SHOVELS))
-                .output(new ItemStack(Items.DIRT_PATH))
-                .sound(SoundEvents.SHOVEL_FLATTEN)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/dirt.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "dirt_path_2"));
-
-        InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(ModTags.Items.OTHER_DIRT),Ingredient.of(ItemTags.HOES))
-                .output(new ItemStack(Items.DIRT))
+                .inventory(ModTags.Items.OTHER_DIRT)
+                .hand(ItemTags.HOES)
+                .output(Items.DIRT)
                 .sound(SoundEvents.HOE_TILL)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/dirt.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "dirt"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(ModTags.Items.DIRT),Ingredient.of(ItemTags.HOES))
-                .output(new ItemStack(Items.FARMLAND))
+                .inventory(ModTags.Items.DIRT)
+                .hand(ItemTags.HOES)
+                .output(Items.FARMLAND)
                 .sound(SoundEvents.HOE_TILL)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/dirt.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "farmland"));
+                .save(recipeOutput);
 
         //======================
         //misc
         //======================
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.PUMPKIN),Ingredient.of(Items.SHEARS))
-                .output(new ItemStack(Items.CARVED_PUMPKIN))
+                .inventory(Items.PUMPKIN)
+                .hand(Items.SHEARS)
+                .output(Items.CARVED_PUMPKIN)
                 .sound(SoundEvents.PUMPKIN_CARVE)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/pumpkin_side.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "carved_pumpkin"));
+                .save(recipeOutput);
 
         //======================
         //wood
         //======================
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.ACACIA_LOG),Ingredient.of(ItemTags.AXES))
-                .output(new ItemStack(Items.STRIPPED_ACACIA_LOG))
+                .inventory(Items.ACACIA_LOG)
+                .hand(ItemTags.AXES)
+                .output(Items.STRIPPED_ACACIA_LOG)
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/acacia_log.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_acacia_log"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.ACACIA_WOOD),Ingredient.of(ItemTags.AXES))
-                .output(new ItemStack(Items.STRIPPED_ACACIA_WOOD))
+                .inventory(Items.ACACIA_WOOD)
+                .hand(ItemTags.AXES)
+                .output(Items.STRIPPED_ACACIA_WOOD)
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/acacia_log.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_acacia_wood"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.BAMBOO_BLOCK),Ingredient.of(ItemTags.AXES))
-                .output(new ItemStack(Items.STRIPPED_BAMBOO_BLOCK))
+                .inventory(Items.BAMBOO_BLOCK)
+                .hand(ItemTags.AXES)
+                .output(Items.STRIPPED_BAMBOO_BLOCK)
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/bamboo_block.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_bamboo_block"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.BIRCH_LOG),Ingredient.of(ItemTags.AXES))
-                .output(new ItemStack(Items.STRIPPED_BIRCH_LOG))
+                .inventory(Items.BIRCH_LOG)
+                .hand(ItemTags.AXES)
+                .output(Items.STRIPPED_BIRCH_LOG)
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/birch_log.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_birch_log"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.BIRCH_WOOD),Ingredient.of(ItemTags.AXES))
-                .output(new ItemStack(Items.STRIPPED_BIRCH_WOOD))
+                .inventory(Items.BIRCH_WOOD)
+                .hand(ItemTags.AXES)
+                .output(Items.STRIPPED_BIRCH_WOOD)
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/birch_log.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_birch_wood"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.CHERRY_LOG),Ingredient.of(ItemTags.AXES))
-                .output(new ItemStack(Items.STRIPPED_CHERRY_LOG))
+                .inventory(Items.CHERRY_LOG)
+                .hand(ItemTags.AXES)
+                .output(Items.STRIPPED_CHERRY_LOG)
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/cherry_log.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_cherry_log"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.CHERRY_WOOD),Ingredient.of(ItemTags.AXES))
-                .output(new ItemStack(Items.STRIPPED_CHERRY_WOOD))
+                .inventory(Items.CHERRY_WOOD)
+                .hand(ItemTags.AXES)
+                .output(Items.STRIPPED_CHERRY_WOOD)
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/cherry_log.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_cherry_wood"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.CRIMSON_STEM),Ingredient.of(ItemTags.AXES))
-                .output(new ItemStack(Items.STRIPPED_CRIMSON_STEM))
+                .inventory(Items.CRIMSON_STEM)
+                .hand(ItemTags.AXES)
+                .output(Items.STRIPPED_CRIMSON_STEM)
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/crimson_stem.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_crimson_stem"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.CRIMSON_HYPHAE),Ingredient.of(ItemTags.AXES))
-                .output(new ItemStack(Items.STRIPPED_CRIMSON_HYPHAE))
+                .inventory(Items.CRIMSON_HYPHAE)
+                .hand(ItemTags.AXES)
+                .output(Items.STRIPPED_CRIMSON_HYPHAE)
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/crimson_stem.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_crimson_hyphae"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.DARK_OAK_LOG),Ingredient.of(ItemTags.AXES))
-                .output(new ItemStack(Items.STRIPPED_DARK_OAK_LOG))
+                .inventory(Items.DARK_OAK_LOG)
+                .hand(ItemTags.AXES)
+                .output(Items.STRIPPED_DARK_OAK_LOG)
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/dark_oak_log.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_dark_oak_log"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.DARK_OAK_WOOD),Ingredient.of(ItemTags.AXES))
-                .output(new ItemStack(Items.STRIPPED_DARK_OAK_WOOD))
+                .inventory(Items.DARK_OAK_WOOD)
+                .hand(ItemTags.AXES)
+                .output(Items.STRIPPED_DARK_OAK_WOOD)
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/dark_oak_log.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_dark_oak_wood"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.JUNGLE_LOG),Ingredient.of(ItemTags.AXES))
-                .output(new ItemStack(Items.STRIPPED_JUNGLE_LOG))
+                .inventory(Items.JUNGLE_LOG)
+                .hand(ItemTags.AXES)
+                .output(Items.STRIPPED_JUNGLE_LOG)
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/jungle_log.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_jungle_log"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.JUNGLE_WOOD),Ingredient.of(ItemTags.AXES))
-                .output(new ItemStack(Items.STRIPPED_JUNGLE_WOOD))
+                .inventory(Items.JUNGLE_WOOD)
+                .hand(ItemTags.AXES)
+                .output(Items.STRIPPED_JUNGLE_WOOD)
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/jungle_log.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_jungle_wood"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.MANGROVE_LOG),Ingredient.of(ItemTags.AXES))
-                .output(new ItemStack(Items.STRIPPED_MANGROVE_LOG))
+                .inventory(Items.MANGROVE_LOG)
+                .hand(ItemTags.AXES)
+                .output(Items.STRIPPED_MANGROVE_LOG)
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/mangrove_log.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_mangrove_log"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.MANGROVE_WOOD),Ingredient.of(ItemTags.AXES))
-                .output(new ItemStack(Items.STRIPPED_MANGROVE_WOOD))
+                .inventory(Items.MANGROVE_WOOD)
+                .hand(ItemTags.AXES)
+                .output(Items.STRIPPED_MANGROVE_WOOD)
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/mangrove_log.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_mangrove_wood"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.OAK_LOG),Ingredient.of(ItemTags.AXES))
-                .output(new ItemStack(Items.STRIPPED_OAK_LOG))
+                .inventory(Items.OAK_LOG)
+                .hand(ItemTags.AXES)
+                .output(Items.STRIPPED_OAK_LOG)
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/oak_log.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_oak_log"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.OAK_WOOD),Ingredient.of(ItemTags.AXES))
-                .output(new ItemStack(Items.STRIPPED_OAK_WOOD))
+                .inventory(Items.OAK_WOOD)
+                .hand(ItemTags.AXES)
+                .output(Items.STRIPPED_OAK_WOOD)
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/oak_log.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_oak_wood"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.SPRUCE_LOG),Ingredient.of(ItemTags.AXES))
-                .output(new ItemStack(Items.STRIPPED_SPRUCE_LOG))
+                .inventory(Items.SPRUCE_LOG)
+                .hand(ItemTags.AXES)
+                .output(Items.STRIPPED_SPRUCE_LOG)
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/spruce_log.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_spruce_log"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.SPRUCE_WOOD),Ingredient.of(ItemTags.AXES))
-                .output(new ItemStack(Items.STRIPPED_SPRUCE_WOOD))
+                .inventory(Items.SPRUCE_WOOD)
+                .hand(ItemTags.AXES)
+                .output(Items.STRIPPED_SPRUCE_WOOD)
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/spruce_log.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_spruce_wood"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.WARPED_STEM),Ingredient.of(ItemTags.AXES))
-                .output(new ItemStack(Items.STRIPPED_WARPED_STEM))
+                .inventory(Items.WARPED_STEM)
+                .hand(ItemTags.AXES)
+                .output(Items.STRIPPED_WARPED_STEM)
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/warped_stem.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_warped_stem"));
+                .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.WARPED_HYPHAE),Ingredient.of(ItemTags.AXES))
-                .output(new ItemStack(Items.STRIPPED_WARPED_HYPHAE))
+                .inventory(Items.WARPED_HYPHAE)
+                .hand(ItemTags.AXES)
+                .output(Items.STRIPPED_WARPED_HYPHAE)
                 .sound(SoundEvents.AXE_STRIP)
                 .particle(ResourceLocation.withDefaultNamespace("textures/block/warped_stem.png"))
-                .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "stripped_warped_hyphae"));
+                .save(recipeOutput);
 
         //======================
         //copper
@@ -223,11 +241,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         //TODO : add copper Recipes
 
-        //InventoryUseRecipeBuilder.recipe()
-        //        .ingredients(Ingredient.of(Items.WAXED_COPPER_BLOCK),Ingredient.of(ItemTags.AXES))
-        //        .output(new ItemStack(Items.COPPER_BLOCK))
-        //        .sound(SoundEvents.AXE_WAX_OFF)
-        //        .particle(ResourceLocation.withDefaultNamespace("textures/block/honeycomp_block.png"))
-        //        .save(recipeOutput,ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, "copper_block_wax_off"));
+        InventoryUseRecipe.Builder.recipe()
+                .ingredients(Ingredient.of(Items.WAXED_COPPER_BLOCK),Ingredient.of(ItemTags.AXES))
+                .output(Items.COPPER_BLOCK)
+                .sound(SoundEvents.AXE_WAX_OFF)
+                .particle(ResourceLocation.withDefaultNamespace("textures/block/honeycomp_block.png"))
+                .save(recipeOutput);
     }
 }

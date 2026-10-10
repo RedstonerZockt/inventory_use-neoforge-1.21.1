@@ -2,34 +2,32 @@ package de.redstoner_zockt.inventory_use.recipe;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import de.redstoner_zockt.inventory_use.InventoryUse;
 import net.minecraft.advancements.Criterion;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public record InventoryUseRecipe(
-        Ingredient handItem,
-        Ingredient inventoryItem,
-        ItemStack outputItem,
-        ResourceLocation particleTexture,
-        Holder<SoundEvent> sound
-) implements Recipe<InventoryUseRecipeInput> {
+public record InventoryUseRecipe(Ingredient handItem, Ingredient inventoryItem, ItemStack outputItem, ResourceLocation particleTexture, Holder<SoundEvent> sound) implements Recipe<InventoryUseRecipeInput> {
 
     @Override
     public boolean matches(InventoryUseRecipeInput input, Level level) {
@@ -161,8 +159,28 @@ public record InventoryUseRecipe(
             return this;
         }
 
-        public Builder output(ItemStack output) {
-            this.output = output;
+        public Builder inventory(Item inventory) {
+            this.inventory = Ingredient.of(inventory);
+            return this;
+        }
+
+        public Builder hand(Item hand) {
+            this.hand = Ingredient.of(hand);
+            return this;
+        }
+
+        public Builder inventory(TagKey<Item> inventory) {
+            this.inventory = Ingredient.of(inventory);
+            return this;
+        }
+
+        public Builder hand(TagKey<Item> hand) {
+            this.hand = Ingredient.of(hand);
+            return this;
+        }
+
+        public Builder output(Item output) {
+            this.output = new ItemStack(output);
             return this;
         }
 
@@ -195,6 +213,16 @@ public record InventoryUseRecipe(
         public void save(RecipeOutput recipeOutput, ResourceLocation id) {
             InventoryUseRecipe recipe = new InventoryUseRecipe(hand, inventory, output, particle, Holder.direct(sound));
             recipeOutput.accept(id, recipe, null);
+        }
+
+        public void save(RecipeOutput recipeOutput) {
+            this.save(recipeOutput, getDefaultRecipeId(this.getResult()));
+        }
+
+        private ResourceLocation getDefaultRecipeId(ItemLike itemLike) {
+            ResourceLocation oldID = BuiltInRegistries.ITEM.getKey(itemLike.asItem());
+            ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(InventoryUse.MOD_ID, oldID.getPath());
+            return ID;
         }
     }
 }

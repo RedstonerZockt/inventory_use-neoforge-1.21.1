@@ -26,11 +26,19 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(Items.GRASS_BLOCK)
                 .add(Items.DIRT)
                 .add(Items.PODZOL)
-                .add(Items.MYCELIUM)
-        ;
+                .add(Items.MYCELIUM);
+
         tag(ModTags.Items.OTHER_DIRT)
                 .add(Items.COARSE_DIRT)
-                .add(Items.ROOTED_DIRT)
+                .add(Items.ROOTED_DIRT);
+
+        tag(ModTags.Items.ALL_DIRT)
+                .add(Items.GRASS_BLOCK)
+                .add(Items.DIRT)
+                .add(Items.PODZOL)
+                .add(Items.MYCELIUM)
+                .add(Items.COARSE_DIRT)
+                .add(Items.ROOTED_DIRT);
         ;
     }
 }

@@ -22,7 +22,7 @@ public class DataGenerators {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
-        generator.addProvider(event.includeClient(), new ItemModelProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeClient(), new VanilaItemModelProvider(packOutput, existingFileHelper));
 
         BlockTagsProvider modBlockTagProvider = new ModBlockTagProvider(packOutput,lookupProvider, existingFileHelper);
 
