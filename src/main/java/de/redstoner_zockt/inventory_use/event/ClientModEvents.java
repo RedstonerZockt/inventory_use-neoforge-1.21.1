@@ -32,7 +32,7 @@ public class ClientModEvents {
         Optional<RecipeHolder<InventoryUseRecipe>> recipe = getCurrentRecipe(event);
 
         if (recipe.isEmpty()) return;
-        if (ClientConfig.USE_MOUSE_BUTTON.get().isNot(event.getClickAction())) return;
+        if (ClientConfig.USE_MOUSE_BUTTON.get().getButton().isNot(event.getClickAction())) return;
 
         SoundEvent sound = recipe.get().value().sound().value();
 
@@ -59,7 +59,7 @@ public class ClientModEvents {
 
     @SubscribeEvent
     public static void onClientPlayerJoin(ClientPlayerNetworkEvent.LoggingIn event) {
-        PacketDistributor.sendToServer(new ClickButtonPacketC2S(ClientConfig.USE_MOUSE_BUTTON.get().name()));
+        PacketDistributor.sendToServer(new ClickButtonPacketC2S(ClientConfig.USE_MOUSE_BUTTON.get().getButton().name()));
     }
 
     @SubscribeEvent
@@ -67,7 +67,7 @@ public class ClientModEvents {
         ModConfig config = event.getConfig();
         if (config.getModId().equals(InventoryUse.MOD_ID)) {
             if (Minecraft.getInstance().getConnection() != null) {
-                PacketDistributor.sendToServer(new ClickButtonPacketC2S(ClientConfig.USE_MOUSE_BUTTON.get().name()));
+                PacketDistributor.sendToServer(new ClickButtonPacketC2S(ClientConfig.USE_MOUSE_BUTTON.get().getButton().name()));
             }
         }
     }
