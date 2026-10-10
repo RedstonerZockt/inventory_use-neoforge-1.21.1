@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ClickButtons {
-    public static Map<Player, ClickButton> CLICK_BUTTONS = new HashMap<>();
+    private static Map<Player, ClickButton> CLICK_BUTTONS = new HashMap<>();
 
     public static void put(ClickButtonPacketC2S clickButtonPacket, IPayloadContext payloadContext) {
         CLICK_BUTTONS.put(payloadContext.player(), ClickButton.valueOf(clickButtonPacket.clickButton()));

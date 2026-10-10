@@ -137,7 +137,7 @@ public record InventoryUseRecipe(Ingredient handItem, Ingredient inventoryItem, 
         Ingredient inventory;
         ItemStack output;
 
-        SoundEvent sound;
+        Holder<SoundEvent> sound;
         ResourceLocation particle;
 
         public Builder() {
@@ -153,24 +153,18 @@ public record InventoryUseRecipe(Ingredient handItem, Ingredient inventoryItem, 
             return new Builder();
         }
 
-        public Builder ingredients(Ingredient inventory, Ingredient hand) {
-            this.inventory = inventory;
-            this.hand = hand;
+        public Builder inventory(Item inventory) {
+            this.inventory = Ingredient.of(inventory);
             return this;
         }
 
-        public Builder inventory(Item inventory) {
+        public Builder inventory(TagKey<Item> inventory) {
             this.inventory = Ingredient.of(inventory);
             return this;
         }
 
         public Builder hand(Item hand) {
             this.hand = Ingredient.of(hand);
-            return this;
-        }
-
-        public Builder inventory(TagKey<Item> inventory) {
-            this.inventory = Ingredient.of(inventory);
             return this;
         }
 
@@ -185,12 +179,22 @@ public record InventoryUseRecipe(Ingredient handItem, Ingredient inventoryItem, 
         }
 
         public Builder sound(SoundEvent sound) {
-            this.sound = sound;
+            this.sound = Holder.direct(sound);
             return this;
         }
 
         public Builder particle(ResourceLocation particle) {
             this.particle = particle;
+            return this;
+        }
+
+        public Builder particle(String path) {
+            this.particle = ResourceLocation.withDefaultNamespace(path);
+            return this;
+        }
+
+        public Builder particle(String namespace, String path) {
+            this.particle = ResourceLocation.fromNamespaceAndPath(namespace, path);
             return this;
         }
 
@@ -211,7 +215,7 @@ public record InventoryUseRecipe(Ingredient handItem, Ingredient inventoryItem, 
 
         @Override
         public void save(RecipeOutput recipeOutput, ResourceLocation id) {
-            InventoryUseRecipe recipe = new InventoryUseRecipe(hand, inventory, output, particle, Holder.direct(sound));
+            InventoryUseRecipe recipe = new InventoryUseRecipe(hand, inventory, output, particle, sound);
             recipeOutput.accept(id, recipe, null);
         }
 

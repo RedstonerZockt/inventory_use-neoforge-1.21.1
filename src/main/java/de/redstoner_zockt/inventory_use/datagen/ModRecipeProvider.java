@@ -1,19 +1,16 @@
 package de.redstoner_zockt.inventory_use.datagen;
 
-import de.redstoner_zockt.inventory_use.InventoryUse;
 import de.redstoner_zockt.inventory_use.recipe.InventoryUseRecipe;
 import de.redstoner_zockt.inventory_use.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
+
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
@@ -32,7 +29,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.SHOVELS)
                 .output(Items.DIRT_PATH)
                 .sound(SoundEvents.SHOVEL_FLATTEN)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/dirt.png"))
+                .particle("textures/block/dirt.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -40,7 +37,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.HOES)
                 .output(Items.DIRT)
                 .sound(SoundEvents.HOE_TILL)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/dirt.png"))
+                .particle("textures/block/dirt.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -48,7 +45,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.HOES)
                 .output(Items.FARMLAND)
                 .sound(SoundEvents.HOE_TILL)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/dirt.png"))
+                .particle("textures/block/dirt.png")
                 .save(recipeOutput);
 
         //======================
@@ -60,7 +57,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(Items.SHEARS)
                 .output(Items.CARVED_PUMPKIN)
                 .sound(SoundEvents.PUMPKIN_CARVE)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/pumpkin_side.png"))
+                .particle("textures/block/pumpkin_side.png")
                 .save(recipeOutput);
 
         //======================
@@ -72,7 +69,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.AXES)
                 .output(Items.STRIPPED_ACACIA_LOG)
                 .sound(SoundEvents.AXE_STRIP)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/acacia_log.png"))
+                .particle("textures/block/acacia_log.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -80,7 +77,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.AXES)
                 .output(Items.STRIPPED_ACACIA_WOOD)
                 .sound(SoundEvents.AXE_STRIP)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/acacia_log.png"))
+                .particle("textures/block/acacia_log.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -88,7 +85,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.AXES)
                 .output(Items.STRIPPED_BAMBOO_BLOCK)
                 .sound(SoundEvents.AXE_STRIP)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/bamboo_block.png"))
+                .particle("textures/block/bamboo_block.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -96,7 +93,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.AXES)
                 .output(Items.STRIPPED_BIRCH_LOG)
                 .sound(SoundEvents.AXE_STRIP)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/birch_log.png"))
+                .particle("textures/block/birch_log.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -104,7 +101,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.AXES)
                 .output(Items.STRIPPED_BIRCH_WOOD)
                 .sound(SoundEvents.AXE_STRIP)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/birch_log.png"))
+                .particle("textures/block/birch_log.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -112,7 +109,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.AXES)
                 .output(Items.STRIPPED_CHERRY_LOG)
                 .sound(SoundEvents.AXE_STRIP)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/cherry_log.png"))
+                .particle("textures/block/cherry_log.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -120,7 +117,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.AXES)
                 .output(Items.STRIPPED_CHERRY_WOOD)
                 .sound(SoundEvents.AXE_STRIP)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/cherry_log.png"))
+                .particle("textures/block/cherry_log.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -128,7 +125,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.AXES)
                 .output(Items.STRIPPED_CRIMSON_STEM)
                 .sound(SoundEvents.AXE_STRIP)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/crimson_stem.png"))
+                .particle("textures/block/crimson_stem.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -136,7 +133,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.AXES)
                 .output(Items.STRIPPED_CRIMSON_HYPHAE)
                 .sound(SoundEvents.AXE_STRIP)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/crimson_stem.png"))
+                .particle("textures/block/crimson_stem.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -144,7 +141,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.AXES)
                 .output(Items.STRIPPED_DARK_OAK_LOG)
                 .sound(SoundEvents.AXE_STRIP)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/dark_oak_log.png"))
+                .particle("textures/block/dark_oak_log.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -152,7 +149,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.AXES)
                 .output(Items.STRIPPED_DARK_OAK_WOOD)
                 .sound(SoundEvents.AXE_STRIP)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/dark_oak_log.png"))
+                .particle("textures/block/dark_oak_log.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -160,7 +157,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.AXES)
                 .output(Items.STRIPPED_JUNGLE_LOG)
                 .sound(SoundEvents.AXE_STRIP)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/jungle_log.png"))
+                .particle("textures/block/jungle_log.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -168,7 +165,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.AXES)
                 .output(Items.STRIPPED_JUNGLE_WOOD)
                 .sound(SoundEvents.AXE_STRIP)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/jungle_log.png"))
+                .particle("textures/block/jungle_log.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -176,7 +173,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.AXES)
                 .output(Items.STRIPPED_MANGROVE_LOG)
                 .sound(SoundEvents.AXE_STRIP)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/mangrove_log.png"))
+                .particle("textures/block/mangrove_log.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -184,7 +181,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.AXES)
                 .output(Items.STRIPPED_MANGROVE_WOOD)
                 .sound(SoundEvents.AXE_STRIP)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/mangrove_log.png"))
+                .particle("textures/block/mangrove_log.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -192,7 +189,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.AXES)
                 .output(Items.STRIPPED_OAK_LOG)
                 .sound(SoundEvents.AXE_STRIP)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/oak_log.png"))
+                .particle("textures/block/oak_log.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -200,7 +197,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.AXES)
                 .output(Items.STRIPPED_OAK_WOOD)
                 .sound(SoundEvents.AXE_STRIP)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/oak_log.png"))
+                .particle("textures/block/oak_log.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -208,7 +205,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.AXES)
                 .output(Items.STRIPPED_SPRUCE_LOG)
                 .sound(SoundEvents.AXE_STRIP)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/spruce_log.png"))
+                .particle("textures/block/spruce_log.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -216,7 +213,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.AXES)
                 .output(Items.STRIPPED_SPRUCE_WOOD)
                 .sound(SoundEvents.AXE_STRIP)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/spruce_log.png"))
+                .particle("textures/block/spruce_log.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -224,7 +221,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.AXES)
                 .output(Items.STRIPPED_WARPED_STEM)
                 .sound(SoundEvents.AXE_STRIP)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/warped_stem.png"))
+                .particle("textures/block/warped_stem.png")
                 .save(recipeOutput);
 
         InventoryUseRecipe.Builder.recipe()
@@ -232,7 +229,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .hand(ItemTags.AXES)
                 .output(Items.STRIPPED_WARPED_HYPHAE)
                 .sound(SoundEvents.AXE_STRIP)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/warped_stem.png"))
+                .particle("textures/block/warped_stem.png")
                 .save(recipeOutput);
 
         //======================
@@ -242,10 +239,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         //TODO : add copper Recipes
 
         InventoryUseRecipe.Builder.recipe()
-                .ingredients(Ingredient.of(Items.WAXED_COPPER_BLOCK),Ingredient.of(ItemTags.AXES))
+                .inventory(Items.WAXED_COPPER_BLOCK)
+                .hand(ItemTags.AXES)
                 .output(Items.COPPER_BLOCK)
                 .sound(SoundEvents.AXE_WAX_OFF)
-                .particle(ResourceLocation.withDefaultNamespace("textures/block/honeycomp_block.png"))
+                .particle("textures/block/honeycomb_block.png")
                 .save(recipeOutput);
     }
 }

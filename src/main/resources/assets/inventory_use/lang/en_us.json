@@ -12,6 +12,8 @@
   "config.inventory_use.use_mouse_button": "Use Mouse Button",
   "config.inventory_use.use_mouse_button.tooltip": "Mouse Button to use",
 
+
+
   "inventory_use.configuration.graphics": "Graphics",
 
   "config.inventory_use.show_particles": "Show particles",
@@ -19,6 +21,8 @@
 
   "config.inventory_use.particle_count": "Particle count",
   "config.inventory_use.particle_count.tooltip": "Count of the particles",
+
+
 
   "inventory_use.configuration.sounds": "Sounds",
 

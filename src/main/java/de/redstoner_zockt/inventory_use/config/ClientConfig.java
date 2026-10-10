@@ -30,7 +30,7 @@ public class ClientConfig {
 
         PARTICLE_COUNT = BUILDER
                 .translation("config.inventory_use.particle_count")
-                .defineInRange("particle_count",30,1,100);
+                .defineInRange("particle_count",30,10,100);
 
         BUILDER.pop();
 
