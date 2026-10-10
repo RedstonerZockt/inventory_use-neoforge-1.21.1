@@ -1,0 +1,31 @@
+{
+  "config.inventory_use.damage": "Schaden",
+  "config.inventory_use.damage.tooltip": "Verteil shaden beim nutzen im inventar",
+
+  "config.inventory_use.damage_per_block": "Shaden pro Block",
+  "config.inventory_use.damage_per_block.tooltip": "Shaden pro Block worauf das item genutzt wurde",
+
+
+
+  "inventory_use.configuration.general": "General",
+
+  "config.inventory_use.use_mouse_button": "Maustaste",
+  "config.inventory_use.use_mouse_button.tooltip": "Maustaste zum nutzen",
+
+
+
+  "inventory_use.configuration.graphics": "Grafik",
+
+  "config.inventory_use.show_particles": "Zeige partikel",
+  "config.inventory_use.show_particles.tooltip": "Partikel sichtbarkeit",
+
+  "config.inventory_use.particle_count": "Partikel anzahl",
+  "config.inventory_use.particle_count.tooltip": "anzahl von den partikeln",
+
+
+
+  "inventory_use.configuration.audio": "Audio",
+
+  "config.inventory_use.use_sound": "Benutz sound",
+  "config.inventory_use.use_sound.tooltip": "Lautstärke von den benutz sound"
+}
