@@ -238,12 +238,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         //TODO : add copper Recipes
 
-        InventoryUseRecipe.Builder.recipe()
-                .inventory(Items.WAXED_COPPER_BLOCK)
-                .hand(ItemTags.AXES)
-                .output(Items.COPPER_BLOCK)
-                .sound(SoundEvents.AXE_WAX_OFF)
-                .particle("textures/block/honeycomb_block.png")
-                .save(recipeOutput);
+        //InventoryUseRecipe.Builder.recipe()
+        //        .inventory(Items.WAXED_COPPER_BLOCK)
+        //        .hand(ItemTags.AXES)
+        //        .output(Items.COPPER_BLOCK)
+        //        .sound(SoundEvents.AXE_WAX_OFF)
+        //        .particle("textures/block/honeycomb_block.png")
+        //        .save(recipeOutput);
     }
 }
