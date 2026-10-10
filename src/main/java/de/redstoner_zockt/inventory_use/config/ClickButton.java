@@ -1,6 +1,5 @@
 package de.redstoner_zockt.inventory_use.config;
 
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.inventory.ClickAction;
 import net.minecraft.util.StringRepresentable;
 
