@@ -27,5 +27,5 @@
   "inventory_use.configuration.audio": "Audio",
 
   "config.inventory_use.use_sound": "Use sounds",
-  "config.inventory_use.use_sound.tooltip": "Volume of use sounds"
+  "config.inventory_use.use_sound.tooltip": "Volume of the use sound"
 }
