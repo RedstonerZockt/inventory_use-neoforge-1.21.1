@@ -2,20 +2,22 @@ package de.redstoner_zockt.inventory_use.config;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.inventory.ClickAction;
+import net.minecraft.util.StringRepresentable;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-public enum ClickButton {
-    PRIMARY(ClickAction.PRIMARY, Component.translatable("config.inventory_use.use_mouse_button.primary")),
-    SECONDARY(ClickAction.SECONDARY, Component.translatable("config.inventory_use.use_mouse_button.secondary")),
-    BOTH(List.of(ClickAction.PRIMARY, ClickAction.SECONDARY), Component.translatable("config.inventory_use.use_mouse_button.both")),
-    ;
+public enum ClickButton implements StringRepresentable {
+    PRIMARY(ClickAction.PRIMARY),
+    SECONDARY(ClickAction.SECONDARY),
+    BOTH(ClickAction.PRIMARY, ClickAction.SECONDARY);
 
     private final List<ClickAction> clickActions;
-    private final Component translation_key;
 
-    public Component getTranslationKey() {
-        return translation_key;
+    ClickButton(ClickAction... clickActions) {
+        this.clickActions = new ArrayList<>();
+        this.clickActions.addAll(Arrays.asList(clickActions));
     }
 
     public boolean is(ClickAction clickAction) {
@@ -26,13 +28,8 @@ public enum ClickButton {
         return !is(clickAction);
     }
 
-    ClickButton(List<ClickAction> clickActions, Component translationKey) {
-        this.clickActions = clickActions;
-        translation_key = translationKey;
-    }
-
-    ClickButton(ClickAction clickAction, Component translationKey) {
-        this.clickActions = List.of(clickAction);
-        translation_key = translationKey;
+    @Override
+    public String getSerializedName() {
+        return this.name().toLowerCase();
     }
 }

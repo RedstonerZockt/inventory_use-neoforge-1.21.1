@@ -1,6 +1,5 @@
 package de.redstoner_zockt.inventory_use.config;
 
-import com.electronwill.nightconfig.core.EnumGetMethod;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
 public class ClientConfig {
